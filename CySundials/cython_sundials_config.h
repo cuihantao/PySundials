@@ -1,0 +1,16 @@
+#ifndef CYTHON_SUNDIALS_CONFIG_H
+#define CYTHON_SUNDIALS_CONFIG_H
+
+#include<sundials/sundials_config.h>
+
+#ifdef SUNDIALS_SINGLE_PRECISION
+#define PRECISION 1
+#elif SUNDIALS_DOUBLE_PRECISION
+#define PRECISION 2
+#elif SUNDIALS_EXTENDED_PRECISION
+#define PRECISION 3
+#else
+#define PRECISION -1
+#endif
+
+#endif /* CYTHON_SUNDIALS_CONFIG_H */
