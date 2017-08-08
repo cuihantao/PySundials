@@ -17,7 +17,7 @@ else:
     for i in found_libraries:
         print(i.split('/')[-1][3:-3])
 
-include_dirs = [sundials_inc, np.get_include(), '.']
+include_dirs = [sundials_inc, np.get_include(), 'CySundials']
 libraries = []
 library_dirs = [sundials_lib]
 define_macros = []

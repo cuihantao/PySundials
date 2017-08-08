@@ -1,1 +1,1 @@
-from .sundials import *
+from .sundials import version

@@ -1,15 +1,7 @@
-cimport sundials
+cimport c_sundials
+from c_sundials cimport realtype, booleantype, PRECISION, SUNDIALS_PACKAGE_VERSION
 
-cdef extern from "cython_sundials_config.h":
-    int PRECISION
-    char * SUNDIALS_PACKAGE_VERSION
-
-cdef extern from "sundials/sundials_types.h":
-    ctypedef double realtype
-
-if PRECISION != 2:
-    raise Exception("Must recompile CySundials - change precision in file sundials.pyx")
-
+version = SUNDIALS_PACKAGE_VERSION.decode('utf-8')
 
 
 cdef test(realtype a, realtype b):
@@ -22,5 +14,3 @@ a = 2.0
 b = 12
 
 print(test(a, b))
-
-print(SUNDIALS_PACKAGE_VERSION)
