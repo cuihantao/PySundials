@@ -5,7 +5,6 @@ from distutils.extension import Extension
 import numpy as np
 import glob
 
-
 sundials_lib = "/opt/packages/sundials-2.7.0/bin/lib"
 sundials_inc = "/opt/packages/sundials-2.7.0/bin/include"
 
@@ -30,7 +29,7 @@ extra_link_args = []
 export_symbols = []
 depends = []
 
-extensions = [Extension("CySundials.sundials", ["CySundials/sundials.pyx"],
+extensions = [Extension("CySundials.*", ["CySundials/*.pyx"],
                         include_dirs=include_dirs,
                         libraries=libraries,
                         library_dirs=library_dirs,
